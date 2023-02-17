@@ -55,4 +55,18 @@ public class PublisherServiceImpl implements PublisherService{
 		return transactionDTO.toString();
 	}
 
+	@Override
+	public String sendEmail(String message) {
+		jmsTemplate.send("emails", new MessageCreator() {
+			@Override
+			public Message createMessage(Session session) throws JMSException {
+				logger.info("Init creation message");
+				ObjectMessage object =  session.createObjectMessage( message);
+				return object;
+			}
+		});
+		logger.info("return message");
+		return "sent email: ".concat(message);
+	}
+
 }

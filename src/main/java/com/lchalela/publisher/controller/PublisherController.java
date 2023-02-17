@@ -28,5 +28,11 @@ public class PublisherController {
 		String message = this.publisherService.sendMessage(transaction);
 		return new ResponseEntity<>(message, HttpStatus.CREATED);
 	}
+	
+	@PostMapping("/send-email")
+	public ResponseEntity<Object> createMessage(@RequestBody String message){
+		String email = this.publisherService.sendEmail(message);
+		return new ResponseEntity<>(email,HttpStatus.CREATED);
+	}
 
 }
