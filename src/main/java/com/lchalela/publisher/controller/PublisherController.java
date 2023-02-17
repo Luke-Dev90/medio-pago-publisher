@@ -14,7 +14,7 @@ import com.lchalela.publisher.dto.TransactionDTO;
 import com.lchalela.publisher.service.PublisherService;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/v1")
 public class PublisherController {
 
 	private Logger logger = LoggerFactory.getLogger(PublisherController.class);

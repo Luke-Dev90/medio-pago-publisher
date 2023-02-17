@@ -33,6 +33,7 @@ public class PublisherServiceImpl implements PublisherService{
 			@Override
 			public Message createMessage(Session session) throws JMSException {
 				logger.info("Init creation message");
+				
 				ObjectMapper mapper = new ObjectMapper();
 				
 				mapper.registerModule(new JavaTimeModule());
